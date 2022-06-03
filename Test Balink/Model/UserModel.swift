@@ -2,7 +2,7 @@
 //  User.swift
 //  Test Balink
 //
-//  Created by Давид Михайлов on 01.06.2022.
+//  Created by Давид Михайлов on 02.06.2022.
 //
 
 import Foundation
