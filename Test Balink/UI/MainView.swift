@@ -9,18 +9,18 @@ import UIKit
 
 class MainView: UIViewController {
 
-// MARK: - Properties
+    let dataManager: DataManager = CoreDataManager.shared
+
+    // MARK: - Properties
     private lazy var userListButton: UIButton = {
         let button = UIButton()
         button.setTitle("UserListButton", for: .normal)
-        button.backgroundColor = .red
+        button.backgroundColor = .systemRed
         button.addTarget(self, action: #selector(retriveUserList), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 10
         return button
     }()
-
-    private var users: [User] = []
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -28,7 +28,8 @@ class MainView: UIViewController {
         view.backgroundColor = .systemBackground
         setupElements()
     }
-// MARK: - Private function
+
+    // MARK: - Private function
     private func setupElements() {
         view.addSubview(userListButton)
 
@@ -39,15 +40,25 @@ class MainView: UIViewController {
     }
 
     func showUsersList() {
-        let vc = UsersListPage(users: users)
+        let vc = UsersListPage()
+
+//        vc.transitioningDelegate =
+//        vc.modalPresentationStyle = .custom
+
+//        self.present(vc, animated: true)
+
         navigationController?.pushViewController(vc, animated: true)
     }
 
     // MARK: - OBJC methods
     @objc func retriveUserList() {
+        guard self.dataManager.fetch().isEmpty else {
+            showUsersList()
+            return
+        }
+
         guard let url = URL(string: "https://reqres.in/api/users") else { return }
         let request = URLRequest(url: url)
-
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 print(error.localizedDescription)
@@ -57,16 +68,14 @@ class MainView: UIViewController {
                   let response = response else { return }
             print(response)
             print(data)
-
             do {
                 let jsonData = try JSONDecoder().decode(Initial.self, from: data)
                 let users = jsonData.data
                 print(users)
-                self.users = users
                 DispatchQueue.main.async {
+                    self.dataManager.save(model: users)
                     self.showUsersList()
                 }
-
             } catch {
                 print(String(describing: error))
             }

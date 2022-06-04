@@ -2,29 +2,29 @@
 //  User.swift
 //  Test Balink
 //
-//  Created by Давид Михайлов on 02.06.2022.
+//  Created by Давид Михайлов on 01.06.2022.
 //
 
 import Foundation
 
 struct User: Codable {
-    let avatar: String
-    let email: String
+    enum CodingKeys: String, CodingKey {
+        case id
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case avatar
+        case email
+    }
+
     let id: Int
-    let first_name: String
-    let last_name: String
+    let firstName: String
+    let lastName: String
+    let avatar: URL?
+    let email: String
 }
 
 struct Initial: Codable {
-    let page: Int
-    let per_page: Int
-    let total: Int
-    let total_pages: Int
     let data: [User]
-    let support: Support
 }
 
-struct Support: Codable {
-    let url: String
-    let text: String
-}
+

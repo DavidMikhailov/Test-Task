@@ -12,12 +12,16 @@
 		3A4E3F882847E06A0047946C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3F872847E06A0047946C /* MainView.swift */; };
 		3A4E3F8D2847E06B0047946C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E3F8C2847E06B0047946C /* Assets.xcassets */; };
 		3A4E3F902847E06B0047946C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E3F8E2847E06B0047946C /* LaunchScreen.storyboard */; };
-		3A4E3F982847FC2F0047946C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3F972847FC2F0047946C /* User.swift */; };
+		3A4E3F982847FC2F0047946C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3F972847FC2F0047946C /* UserModel.swift */; };
 		3A4E3F9C2848013F0047946C /* Users.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3F9A2848013F0047946C /* Users.xcdatamodeld */; };
 		3A4E3F9E28480B5E0047946C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3F9D28480B5E0047946C /* CoreDataManager.swift */; };
 		3A4E3FA1284810E40047946C /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3FA0284810E40047946C /* CustomPopUp.swift */; };
 		3A4E3FA4284A0E690047946C /* UsersListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3FA3284A0E690047946C /* UsersListPage.swift */; };
 		3A4E3FA6284A14000047946C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3FA5284A14000047946C /* UserCell.swift */; };
+		3A4E3FA9284A9F710047946C /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3FA8284A9F710047946C /* UserEntity.swift */; };
+		3A4E3FAB284A9FA60047946C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3FAA284A9FA60047946C /* DataManager.swift */; };
+		3A4E3FAD284AA8870047946C /* UserEditPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3FAC284AA8860047946C /* UserEditPage.swift */; };
+		4016B06244624A65F5E1708E /* Pods_Test_Balink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D2CE67B7A522195CAE3B7BE /* Pods_Test_Balink.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +32,18 @@
 		3A4E3F8C2847E06B0047946C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A4E3F8F2847E06B0047946C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A4E3F912847E06B0047946C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A4E3F972847FC2F0047946C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3A4E3F972847FC2F0047946C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3A4E3F9B2848013F0047946C /* Users.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Users.xcdatamodel; sourceTree = "<group>"; };
 		3A4E3F9D28480B5E0047946C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		3A4E3FA0284810E40047946C /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		3A4E3FA3284A0E690047946C /* UsersListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListPage.swift; sourceTree = "<group>"; };
 		3A4E3FA5284A14000047946C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		3A4E3FA8284A9F710047946C /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		3A4E3FAA284A9FA60047946C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		3A4E3FAC284AA8860047946C /* UserEditPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditPage.swift; sourceTree = "<group>"; };
+		5D5E5EAF261960EAD5EFE1EB /* Pods-Test Balink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test Balink.release.xcconfig"; path = "Target Support Files/Pods-Test Balink/Pods-Test Balink.release.xcconfig"; sourceTree = "<group>"; };
+		8D2CE67B7A522195CAE3B7BE /* Pods_Test_Balink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_Balink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8DD3F09B65CEB7DC353D9D6 /* Pods-Test Balink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test Balink.debug.xcconfig"; path = "Target Support Files/Pods-Test Balink/Pods-Test Balink.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4016B06244624A65F5E1708E /* Pods_Test_Balink.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +63,8 @@
 			children = (
 				3A4E3F822847E06A0047946C /* Test Balink */,
 				3A4E3F812847E06A0047946C /* Products */,
+				B47DEE1B0BD528DA34C6EC5A /* Pods */,
+				F8CDE466E5D069AB95D9C1DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +82,7 @@
 				3A4E3F832847E06A0047946C /* AppDelegate.swift */,
 				3A4E3F852847E06A0047946C /* SceneDelegate.swift */,
 				3A4E3FA2284A0DE80047946C /* UI */,
+				3A4E3FA7284A9EA80047946C /* CoreData */,
 				3A4E3F9F28480F620047946C /* Services */,
 				3A4E3F992847FD090047946C /* Model */,
 				3A4E3F8C2847E06B0047946C /* Assets.xcassets */,
@@ -81,8 +95,7 @@
 		3A4E3F992847FD090047946C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3A4E3F972847FC2F0047946C /* User.swift */,
-				3A4E3F9A2848013F0047946C /* Users.xcdatamodeld */,
+				3A4E3F972847FC2F0047946C /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -90,7 +103,7 @@
 		3A4E3F9F28480F620047946C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				3A4E3F9D28480B5E0047946C /* CoreDataManager.swift */,
+				3A4E3FAA284A9FA60047946C /* DataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -101,9 +114,37 @@
 				3A4E3F872847E06A0047946C /* MainView.swift */,
 				3A4E3FA3284A0E690047946C /* UsersListPage.swift */,
 				3A4E3FA5284A14000047946C /* UserCell.swift */,
+				3A4E3FAC284AA8860047946C /* UserEditPage.swift */,
 				3A4E3FA0284810E40047946C /* CustomPopUp.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		3A4E3FA7284A9EA80047946C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3A4E3F9D28480B5E0047946C /* CoreDataManager.swift */,
+				3A4E3F9A2848013F0047946C /* Users.xcdatamodeld */,
+				3A4E3FA8284A9F710047946C /* UserEntity.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		B47DEE1B0BD528DA34C6EC5A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D8DD3F09B65CEB7DC353D9D6 /* Pods-Test Balink.debug.xcconfig */,
+				5D5E5EAF261960EAD5EFE1EB /* Pods-Test Balink.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F8CDE466E5D069AB95D9C1DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D2CE67B7A522195CAE3B7BE /* Pods_Test_Balink.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A4E3F942847E06B0047946C /* Build configuration list for PBXNativeTarget "Test Balink" */;
 			buildPhases = (
+				7F9E2318571E04CE2F072E64 /* [CP] Check Pods Manifest.lock */,
 				3A4E3F7C2847E06A0047946C /* Sources */,
 				3A4E3F7D2847E06A0047946C /* Frameworks */,
 				3A4E3F7E2847E06A0047946C /* Resources */,
+				8E5133433AFF56739B1E6995 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,6 +214,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7F9E2318571E04CE2F072E64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Test Balink-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E5133433AFF56739B1E6995 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test Balink/Pods-Test Balink-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test Balink/Pods-Test Balink-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test Balink/Pods-Test Balink-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3A4E3F7C2847E06A0047946C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -179,12 +264,15 @@
 				3A4E3FA1284810E40047946C /* CustomPopUp.swift in Sources */,
 				3A4E3FA4284A0E690047946C /* UsersListPage.swift in Sources */,
 				3A4E3F9E28480B5E0047946C /* CoreDataManager.swift in Sources */,
+				3A4E3FA9284A9F710047946C /* UserEntity.swift in Sources */,
 				3A4E3F882847E06A0047946C /* MainView.swift in Sources */,
 				3A4E3F9C2848013F0047946C /* Users.xcdatamodeld in Sources */,
 				3A4E3FA6284A14000047946C /* UserCell.swift in Sources */,
 				3A4E3F842847E06A0047946C /* AppDelegate.swift in Sources */,
-				3A4E3F982847FC2F0047946C /* User.swift in Sources */,
+				3A4E3FAB284A9FA60047946C /* DataManager.swift in Sources */,
+				3A4E3F982847FC2F0047946C /* UserModel.swift in Sources */,
 				3A4E3F862847E06A0047946C /* SceneDelegate.swift in Sources */,
+				3A4E3FAD284AA8870047946C /* UserEditPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +408,7 @@
 		};
 		3A4E3F952847E06B0047946C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8DD3F09B65CEB7DC353D9D6 /* Pods-Test Balink.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -348,6 +437,7 @@
 		};
 		3A4E3F962847E06B0047946C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D5E5EAF261960EAD5EFE1EB /* Pods-Test Balink.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

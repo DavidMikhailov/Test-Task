@@ -10,7 +10,9 @@ import UIKit
 
 class UsersListPage: UIViewController {
 
-    private let users: [User]
+    let dataManager: DataManager = CoreDataManager.shared
+
+    private var users: [User] = []
 
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -23,27 +25,20 @@ class UsersListPage: UIViewController {
         return collectionView
     }()
 
-//     MARK: - Init
-    init(users: [User]) {
-        self.users = users
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.users = dataManager.fetch()
+
         collectionView.dataSource = self
         collectionView.delegate = self
         configureCollectionView()
     }
 
     func configureCollectionView() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         view.addSubview(collectionView)
 
         NSLayoutConstraint.activate([
@@ -52,7 +47,6 @@ class UsersListPage: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-
     }
 }
 
@@ -69,7 +63,7 @@ extension UsersListPage: UICollectionViewDelegate, UICollectionViewDataSource, U
             fatalError("DequeueReusableCell failed while casting")
         }
         cell.configureCell(userAvatar: users.avatar,
-                           userName: users.first_name,
+                           userName: users.firstName,
                            userEmail: users.email)
         return cell
     }
@@ -77,5 +71,12 @@ extension UsersListPage: UICollectionViewDelegate, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width - 80
         return CGSize(width: width, height: width)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UserEditPage()
+        vc.firstName = users[indexPath.row].firstName
+        vc.lastName = users[indexPath.row].lastName
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

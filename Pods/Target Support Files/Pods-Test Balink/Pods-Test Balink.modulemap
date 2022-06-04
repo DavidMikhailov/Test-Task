@@ -1,0 +1,6 @@
+framework module Pods_Test_Balink {
+  umbrella header "Pods-Test Balink-umbrella.h"
+
+  export *
+  module * { export * }
+}

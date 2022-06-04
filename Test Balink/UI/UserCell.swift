@@ -5,7 +5,7 @@
 //  Created by Давид Михайлов on 03.06.2022.
 //
 
-import Foundation
+import AlamofireImage
 import UIKit
 
 class UserCell: UICollectionViewCell {
@@ -13,7 +13,7 @@ class UserCell: UICollectionViewCell {
 
     private lazy var userImage: UIImageView = {
         var imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -43,7 +43,7 @@ class UserCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        DispatchQueue.main.async {
             self.addSubviews()
             self.configureUI()
         }
@@ -90,8 +90,14 @@ class UserCell: UICollectionViewCell {
 
     }
 
-    func configureCell(userAvatar: String, userName: String, userEmail: String) {
-        userImage.image = UIImage(named: userAvatar)
+    override func prepareForReuse() {
+        userImage.af.cancelImageRequest()
+    }
+
+    func configureCell(userAvatar: URL?, userName: String, userEmail: String) {
+        if let userAvatarUrl = userAvatar {
+            userImage.af.setImage(withURL: userAvatarUrl)
+        }
         nameLabel.text = userName
         emailLabel.text = userEmail
     }
