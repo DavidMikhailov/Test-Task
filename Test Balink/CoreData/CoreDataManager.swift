@@ -9,10 +9,10 @@ import Foundation
 import CoreData
 
 final class CoreDataManager: DataManager {
-
+    
     static let shared = CoreDataManager()
     private init() {}
-
+    
     func save(model: [User]) {
         model.forEach {
             let newUser = NSEntityDescription.insertNewObject(forEntityName: "User", into: persistentContainer.viewContext) as! UserEntity
@@ -24,7 +24,7 @@ final class CoreDataManager: DataManager {
         }
         saveContext()
     }
-
+    
     func fetch() -> [User] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         let entities = (try? persistentContainer.viewContext.fetch(fetchRequest) as? [UserEntity]) ?? []
@@ -34,9 +34,30 @@ final class CoreDataManager: DataManager {
             .sorted(by: { $0.id < $1.id })
         return users
     }
-
+    
+    func update(userId: Int, firstName: String, lastName: String) {
+        guard let userEntity = getEntity(id: userId) else {
+            return
+        }
+        userEntity.name = firstName
+        userEntity.lastName = lastName
+        
+        saveContext()
+    }
+    
+    func get(by id: Int) -> User? {
+        return getEntity(id: id).map {
+            User(id: $0.id.intValue, firstName: $0.name ?? "", lastName: $0.lastName ?? "", avatar: $0.avatar.flatMap { URL(string: $0) }, email: $0.email ?? "")
+        }
+    }
+    
+    private func getEntity(id: Int) -> UserEntity? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format: "id == %d", id)
+        return (try? persistentContainer.viewContext.fetch(fetchRequest) as? [UserEntity])?.first
+    }
+    
     // MARK: - Core Data stack
-
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Users")
         container.loadPersistentStores { _, error in
@@ -46,7 +67,7 @@ final class CoreDataManager: DataManager {
         }
         return container
     }()
-
+    
     // MARK: - Core Data Saving support
     private func saveContext() {
         let context = persistentContainer.viewContext

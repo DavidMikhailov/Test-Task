@@ -9,8 +9,8 @@ import AlamofireImage
 import UIKit
 
 class UserCell: UICollectionViewCell {
-    // MARK: - Private properties
 
+    // MARK: - Private properties
     private lazy var userImage: UIImageView = {
         var imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -40,7 +40,6 @@ class UserCell: UICollectionViewCell {
 
 
     // MARK: - Init
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         DispatchQueue.main.async {
@@ -52,8 +51,8 @@ class UserCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    // MARK: - Layouts subviews
 
+    // MARK: - Layouts subviews
     private func addSubviews() {
         contentView.addSubview(userImage)
         contentView.addSubview(nameLabel)

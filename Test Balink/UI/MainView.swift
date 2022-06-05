@@ -7,9 +7,12 @@
 
 import UIKit
 
+import UIKit
+
 class MainView: UIViewController {
 
     let dataManager: DataManager = CoreDataManager.shared
+    let usersApi: UsersApiProtocol = UsersApi()
 
     // MARK: - Properties
     private lazy var userListButton: UIButton = {
@@ -41,12 +44,6 @@ class MainView: UIViewController {
 
     func showUsersList() {
         let vc = UsersListPage()
-
-//        vc.transitioningDelegate =
-//        vc.modalPresentationStyle = .custom
-
-//        self.present(vc, animated: true)
-
         navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -57,29 +54,13 @@ class MainView: UIViewController {
             return
         }
 
-        guard let url = URL(string: "https://reqres.in/api/users") else { return }
-        let request = URLRequest(url: url)
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print(error.localizedDescription)
+        usersApi.get { [weak self] users in
+            guard let users = users else {
                 return
             }
-            guard let data = data,
-                  let response = response else { return }
-            print(response)
-            print(data)
-            do {
-                let jsonData = try JSONDecoder().decode(Initial.self, from: data)
-                let users = jsonData.data
-                print(users)
-                DispatchQueue.main.async {
-                    self.dataManager.save(model: users)
-                    self.showUsersList()
-                }
-            } catch {
-                print(String(describing: error))
-            }
-        }.resume()
+            self?.dataManager.save(model: users)
+            self?.showUsersList()
+        }
     }
 }
 

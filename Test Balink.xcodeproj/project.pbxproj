@@ -15,12 +15,13 @@
 		3A4E3F982847FC2F0047946C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3F972847FC2F0047946C /* UserModel.swift */; };
 		3A4E3F9C2848013F0047946C /* Users.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3F9A2848013F0047946C /* Users.xcdatamodeld */; };
 		3A4E3F9E28480B5E0047946C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3F9D28480B5E0047946C /* CoreDataManager.swift */; };
-		3A4E3FA1284810E40047946C /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3FA0284810E40047946C /* CustomPopUp.swift */; };
 		3A4E3FA4284A0E690047946C /* UsersListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3FA3284A0E690047946C /* UsersListPage.swift */; };
 		3A4E3FA6284A14000047946C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3FA5284A14000047946C /* UserCell.swift */; };
 		3A4E3FA9284A9F710047946C /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3FA8284A9F710047946C /* UserEntity.swift */; };
 		3A4E3FAB284A9FA60047946C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3FAA284A9FA60047946C /* DataManager.swift */; };
 		3A4E3FAD284AA8870047946C /* UserEditPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3FAC284AA8860047946C /* UserEditPage.swift */; };
+		3A4E3FB2284C8E710047946C /* UsersApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3FB1284C8E710047946C /* UsersApiProtocol.swift */; };
+		3A4E3FB4284C8E9F0047946C /* UsersApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E3FB3284C8E9F0047946C /* UsersApi.swift */; };
 		4016B06244624A65F5E1708E /* Pods_Test_Balink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D2CE67B7A522195CAE3B7BE /* Pods_Test_Balink.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,12 +36,13 @@
 		3A4E3F972847FC2F0047946C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3A4E3F9B2848013F0047946C /* Users.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Users.xcdatamodel; sourceTree = "<group>"; };
 		3A4E3F9D28480B5E0047946C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		3A4E3FA0284810E40047946C /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		3A4E3FA3284A0E690047946C /* UsersListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListPage.swift; sourceTree = "<group>"; };
 		3A4E3FA5284A14000047946C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		3A4E3FA8284A9F710047946C /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		3A4E3FAA284A9FA60047946C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3A4E3FAC284AA8860047946C /* UserEditPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditPage.swift; sourceTree = "<group>"; };
+		3A4E3FB1284C8E710047946C /* UsersApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersApiProtocol.swift; sourceTree = "<group>"; };
+		3A4E3FB3284C8E9F0047946C /* UsersApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersApi.swift; sourceTree = "<group>"; };
 		5D5E5EAF261960EAD5EFE1EB /* Pods-Test Balink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test Balink.release.xcconfig"; path = "Target Support Files/Pods-Test Balink/Pods-Test Balink.release.xcconfig"; sourceTree = "<group>"; };
 		8D2CE67B7A522195CAE3B7BE /* Pods_Test_Balink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_Balink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8DD3F09B65CEB7DC353D9D6 /* Pods-Test Balink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test Balink.debug.xcconfig"; path = "Target Support Files/Pods-Test Balink/Pods-Test Balink.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		3A4E3F822847E06A0047946C /* Test Balink */ = {
 			isa = PBXGroup;
 			children = (
+				3A4E3FB0284C8E510047946C /* UsersAPI */,
 				3A4E3F832847E06A0047946C /* AppDelegate.swift */,
 				3A4E3F852847E06A0047946C /* SceneDelegate.swift */,
 				3A4E3FA2284A0DE80047946C /* UI */,
@@ -115,7 +118,6 @@
 				3A4E3FA3284A0E690047946C /* UsersListPage.swift */,
 				3A4E3FA5284A14000047946C /* UserCell.swift */,
 				3A4E3FAC284AA8860047946C /* UserEditPage.swift */,
-				3A4E3FA0284810E40047946C /* CustomPopUp.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -128,6 +130,15 @@
 				3A4E3FA8284A9F710047946C /* UserEntity.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		3A4E3FB0284C8E510047946C /* UsersAPI */ = {
+			isa = PBXGroup;
+			children = (
+				3A4E3FB1284C8E710047946C /* UsersApiProtocol.swift */,
+				3A4E3FB3284C8E9F0047946C /* UsersApi.swift */,
+			);
+			path = UsersAPI;
 			sourceTree = "<group>";
 		};
 		B47DEE1B0BD528DA34C6EC5A /* Pods */ = {
@@ -261,14 +272,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A4E3FA1284810E40047946C /* CustomPopUp.swift in Sources */,
 				3A4E3FA4284A0E690047946C /* UsersListPage.swift in Sources */,
 				3A4E3F9E28480B5E0047946C /* CoreDataManager.swift in Sources */,
 				3A4E3FA9284A9F710047946C /* UserEntity.swift in Sources */,
+				3A4E3FB4284C8E9F0047946C /* UsersApi.swift in Sources */,
 				3A4E3F882847E06A0047946C /* MainView.swift in Sources */,
 				3A4E3F9C2848013F0047946C /* Users.xcdatamodeld in Sources */,
 				3A4E3FA6284A14000047946C /* UserCell.swift in Sources */,
 				3A4E3F842847E06A0047946C /* AppDelegate.swift in Sources */,
+				3A4E3FB2284C8E710047946C /* UsersApiProtocol.swift in Sources */,
 				3A4E3FAB284A9FA60047946C /* DataManager.swift in Sources */,
 				3A4E3F982847FC2F0047946C /* UserModel.swift in Sources */,
 				3A4E3F862847E06A0047946C /* SceneDelegate.swift in Sources */,

@@ -63,7 +63,7 @@ extension UsersListPage: UICollectionViewDelegate, UICollectionViewDataSource, U
             fatalError("DequeueReusableCell failed while casting")
         }
         cell.configureCell(userAvatar: users.avatar,
-                           userName: users.firstName,
+                           userName: users.firstName + " " + users.lastName,
                            userEmail: users.email)
         return cell
     }
@@ -75,8 +75,19 @@ extension UsersListPage: UICollectionViewDelegate, UICollectionViewDataSource, U
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = UserEditPage()
-        vc.firstName = users[indexPath.row].firstName
-        vc.lastName = users[indexPath.row].lastName
+        vc.userId = users[indexPath.row].id
+        vc.onSave = { [weak self] in
+            self?.onSave()
+        }
+        vc.onClose = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
         navigationController?.pushViewController(vc, animated: true)
+    }
+
+    private func onSave() {
+        users = dataManager.fetch()
+        collectionView.reloadData()
+        navigationController?.popViewController(animated: true)
     }
 }

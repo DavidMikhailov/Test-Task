@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct Initial: Codable {
+    let data: [User]
+}
+
 struct User: Codable {
     enum CodingKeys: String, CodingKey {
         case id
@@ -22,9 +26,3 @@ struct User: Codable {
     let avatar: URL?
     let email: String
 }
-
-struct Initial: Codable {
-    let data: [User]
-}
-
-
