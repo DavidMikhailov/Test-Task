@@ -10,7 +10,7 @@ import UIKit
 
 class UserCell: UICollectionViewCell {
 
-    // MARK: - Private properties
+    // MARK: - Properties
     private lazy var userImage: UIImageView = {
         var imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -52,7 +52,11 @@ class UserCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Layouts subviews
+    // MARK: - Methods
+    override func prepareForReuse() {
+        userImage.af.cancelImageRequest()
+    }
+
     private func addSubviews() {
         contentView.addSubview(userImage)
         contentView.addSubview(nameLabel)
@@ -61,7 +65,10 @@ class UserCell: UICollectionViewCell {
 
     private func configureUI() {
         contentView.layer.cornerRadius = 5
-        contentView.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
+        contentView.layer.borderColor = CGColor(red: 0,
+                                                green: 0,
+                                                blue: 0,
+                                                alpha: 1)
         contentView.layer.borderWidth = 5
         contentView.clipsToBounds = true
         contentView.backgroundColor = .white
@@ -87,10 +94,6 @@ class UserCell: UICollectionViewCell {
             emailLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor)
         ])
 
-    }
-
-    override func prepareForReuse() {
-        userImage.af.cancelImageRequest()
     }
 
     func configureCell(userAvatar: URL?, userName: String, userEmail: String) {

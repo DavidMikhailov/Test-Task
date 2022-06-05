@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 final class CoreDataManager: DataManager {
-    
+
     static let shared = CoreDataManager()
     private init() {}
     

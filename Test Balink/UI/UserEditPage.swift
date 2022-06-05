@@ -108,9 +108,9 @@ class UserEditPage: UIViewController {
     
     // MARK: - OBJC methods
     @objc func saveData() {
-        let name = firstNameTF.text ?? ""
+        let firstName = firstNameTF.text ?? ""
         let lastName = lastNameTF.text ?? ""
-        dataManager.update(userId: userId, firstName: name, lastName: lastName)
+        dataManager.update(userId: userId, firstName: firstName, lastName: lastName)
         
         onSave()
     }

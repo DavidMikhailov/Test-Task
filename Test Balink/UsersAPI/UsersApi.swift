@@ -8,7 +8,7 @@
 import Foundation
 
 class UsersApi: UsersApiProtocol {
-    func get(onComplete: @escaping ([User]?) -> Void) {
+    func getUsers(onComplete: @escaping ([User]?) -> Void) {
 
         guard let url = URL(string: "https://reqres.in/api/users") else { return }
         let request = URLRequest(url: url)

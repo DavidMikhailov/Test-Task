@@ -8,5 +8,5 @@
 import Foundation
 
 protocol UsersApiProtocol: AnyObject {
-    func get(onComplete: @escaping ([User]?) -> Void)
+    func getUsers(onComplete: @escaping ([User]?) -> Void)
 }
